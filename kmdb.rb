@@ -265,6 +265,11 @@ role.save
 puts "Movies"
 puts "======"
 puts ""
+movies = Movie
+
+for movie in movies
+    puts Movie[movie]
+end 
 
 # Query the movies data and loop through the results to display the movies output.
 # TODO!
