@@ -86,30 +86,30 @@ studio.save
 warner = Studio.find_by({"name" => "Warner Bros."})
 
 #Movies Entry
-#movie = Movie.new
-#movie["title"] = "Batman Begins"
-#movie["year_released"] = "2005"
-#movie["rated"] = "PG-13"
-#movie["studio_id"] = warner["id"]
-#movie.save
+movie = Movie.new
+movie["title"] = "Batman Begins"
+movie["year_released"] = "2005"
+movie["rated"] = "PG-13"
+movie["studio_id"] = warner["id"]
+movie.save
 
-#movie = Movie.new
-#movie["title"] = "The Dark Knight"
-#movie["year_released"] = "2008"
-#movie["rated"] = "PG-13"
-#movie["studio_id"] = warner["id"]
-#movie.save
+movie = Movie.new
+movie["title"] = "The Dark Knight"
+movie["year_released"] = "2008"
+movie["rated"] = "PG-13"
+movie["studio_id"] = warner["id"]
+movie.save
 
-#movie = Movie.new
-#movie["title"] = "The Dark Knight Rises"
-#movie["year_released"] = "2012"
-#movie["rated"] = "PG-13"
-#movie["studio_id"] = warner["id"]
-#movie.save
+movie = Movie.new
+movie["title"] = "The Dark Knight Rises"
+movie["year_released"] = "2012"
+movie["rated"] = "PG-13"
+movie["studio_id"] = warner["id"]
+movie.save
 
-#begins = Movie.find_by({"name" => "Batman Begins"})
-#knight = Movie.find_by({"name" => "The Dark Knight"}
-#rises = Movie.find_by({"name" => "The Dark Knight Rises"}
+begins = Movie.find_by({"title" => "Batman Begins"})
+knight = Movie.find_by({"title" => "The Dark Knight"})
+rises = Movie.find_by({"title" => "The Dark Knight Rises"})
 
 #Actors Entry
 actor = Actor.new
@@ -168,9 +168,99 @@ actor.save
 hathaway = Actor.find_by({"name" => "Anne Hathaway"})
 
 #Adding Roles
-puts hathaway["name"]
+role = Role.new
+role["movie_id"] = begins["id"]
+role["actor_id"] = bale["id"]
+role["character_name"] = "Bruce Wayne"
+role.save
 
-#puts movie.all.count
+role = Role.new
+role["movie_id"] = begins["id"]
+role["actor_id"] = caine["id"]
+role["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+role["movie_id"] = begins["id"]
+role["actor_id"] = neeson["id"]
+role["character_name"] = "Ra's Al Ghul"
+role.save
+
+role = Role.new
+role["movie_id"] = begins["id"]
+role["actor_id"] = holmes["id"]
+role["character_name"] = "Rachel Dawes"
+role.save
+
+role = Role.new
+role["movie_id"] = begins["id"]
+role["actor_id"] = oldman["id"]
+role["character_name"] = "Commissioner Gordon"
+role.save
+
+#Dark Night
+
+role = Role.new
+role["movie_id"] = knight["id"]
+role["actor_id"] = bale["id"]
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = knight["id"]
+role["actor_id"] = caine["id"]
+role["character_name"] = "Alfred"
+role.save
+
+role = Role.new
+role["movie_id"] = knight["id"]
+role["actor_id"] = ledger["id"]
+role["character_name"] = "Joker"
+role.save
+
+role = Role.new
+role["movie_id"] = knight["id"]
+role["actor_id"] = eckhart["id"]
+role["character_name"] = "Harvey Dent"
+role.save
+
+role = Role.new
+role["movie_id"] = knight["id"]
+role["actor_id"] = gyllenhaal["id"]
+role["character_name"] = "Rachel Dawes"
+role.save
+
+#Dark Knight Rises
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = bale["id"]
+role["character_name"] = "Bruce Wayne"
+role.save
+
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = oldman["id"]
+role["character_name"] = "Commissioner Gordon"
+role.save
+
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = hardy["id"]
+role["character_name"] = "Bane"
+role.save
+
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = levitt["id"]
+role["character_name"] = "John Blake"
+role.save
+
+role = Role.new
+role["movie_id"] = rises["id"]
+role["actor_id"] = hathaway["id"]
+role["character_name"] = "Selina Kyle"
+role.save
+
 # Prints a header for the movies output
 puts "Movies"
 puts "======"
