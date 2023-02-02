@@ -265,10 +265,11 @@ role.save
 puts "Movies"
 puts "======"
 puts ""
-movies = Movie
 
+movies = Movie.all
 for movie in movies
-    puts Movie[movie]
+    studio = Studio.find_by({"id" => movie["studio_id"]})
+    puts "#{movie["title"]}  #{movie["year_released"]}  #{studio["name"]}"
 end 
 
 # Query the movies data and loop through the results to display the movies output.
@@ -280,5 +281,13 @@ puts "Top Cast"
 puts "========"
 puts ""
 
+roles = Role.all
+for role in roles
+    movie = Movie.find_by({"id" => role["movie_id"]})
+    actor = Actor.find_by({"id" => role["actor_id"]})
+    puts "#{movie["title"]}   #{actor["name"]}   #{role["character_name"]}"
+end 
+
+#SELECT movies.title, actors.name, roles.character_name
 # Query the cast data and loop through the results to display the cast output for each movie.
 # TODO!
